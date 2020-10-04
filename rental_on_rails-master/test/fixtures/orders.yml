@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  custumer_id: 
+  product_ids: MyString
+  start: 2015-07-06
+  end: 2015-07-06
+  number_day: 1
+  cleaning: false
+  insurance: false
+  delivery_id: 
+  taxation_id: 
+  price_pretax: 9.99
+  price_tax: 9.99
+  total: 9.99
+  status: false
+
+two:
+  custumer_id: 
+  product_ids: MyString
+  start: 2015-07-06
+  end: 2015-07-06
+  number_day: 1
+  cleaning: false
+  insurance: false
+  delivery_id: 
+  taxation_id: 
+  price_pretax: 9.99
+  price_tax: 9.99
+  total: 9.99
+  status: false

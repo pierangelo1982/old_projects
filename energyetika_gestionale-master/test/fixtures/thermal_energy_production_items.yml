@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  thermal_energy_production: one
+  caldo_freddo: MyString
+  utenza: MyString
+  nome_generatore: MyString
+  matricola: MyString
+  potenza: MyString
+  dest_acs: MyString
+
+two:
+  thermal_energy_production: two
+  caldo_freddo: MyString
+  utenza: MyString
+  nome_generatore: MyString
+  matricola: MyString
+  potenza: MyString
+  dest_acs: MyString

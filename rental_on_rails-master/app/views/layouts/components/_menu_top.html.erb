@@ -1,0 +1,35 @@
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Rentalonrails</a>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Prodotti", products_path  %></li>
+            <li><%= link_to "Manufacturers", manufacturers_path %></li>
+            <li><%= link_to "Tipologia", typologies_path %></li>
+            <li><%= link_to "Clienti", custumers_path  %></li>
+            <li><%= link_to "Ordini", orders_path  %></li>
+            <li><%= link_to "Tasse", taxations_path %></li>
+            <li><%= link_to "Trasporto", deliveries_path %></li>
+          </ul>
+          <!-- Navbar right -->
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+              </li>
+            <% else %>
+              <li>
+              <%= link_to('Login', new_user_session_path)  %>  
+              </li>
+            <% end %>
+          </ul><!-- end navbar right -->
+        </div>
+      </div>
+    </div>
+

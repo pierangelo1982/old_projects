@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Utility Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Utility</th>
+      <th>Nome</th>
+      <th>Marca</th>
+      <th>Matricola</th>
+      <th>Potenza</th>
+      <th>Ore</th>
+      <th>Vettore</th>
+      <th>Funzione</th>
+      <th>Ausiliari</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @utility_items.each do |utility_item| %>
+      <tr>
+        <td><%= utility_item.utility %></td>
+        <td><%= utility_item.nome %></td>
+        <td><%= utility_item.marca %></td>
+        <td><%= utility_item.matricola %></td>
+        <td><%= utility_item.potenza %></td>
+        <td><%= utility_item.ore %></td>
+        <td><%= utility_item.vettore %></td>
+        <td><%= utility_item.funzione %></td>
+        <td><%= utility_item.ausiliari %></td>
+        <td><%= link_to 'Show', utility_item %></td>
+        <td><%= link_to 'Edit', edit_utility_item_path(utility_item) %></td>
+        <td><%= link_to 'Destroy', utility_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Utility Item', new_utility_item_path %>

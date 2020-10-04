@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <h3 class="page-title">Compressori - S.8<br>
+  <%= @compressor.company.denominazione %>
+</h3>
+
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Marca</th>
+      <th>Modello</th>
+      <th>Potenza</th>
+      <th>Anno</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compressor.compressor_items.each do |compressor_item| %>
+      <tr>
+        <td><%= compressor_item.marca %></td>
+        <td><%= compressor_item.modello %></td>
+        <td><%= compressor_item.potenza %></td>
+        <td><%= compressor_item.anno %></td>
+        <td><%= compressor_item.note %></td>
+        <td><%= link_to 'Show', compressor_item %></td>
+        <td><%= link_to 'Edit', edit_compressor_item_path(compressor_item) %></td>
+        <td><%= link_to 'Destroy', compressor_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <strong>Note:</strong>
+  <%= @compressor.note %>
+</p>
+
+<%= link_to 'Edit', edit_compressor_path(@compressor) %> |
+<%= link_to 'Back', compressors_path %>
+
+
+</div>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Acquired Energies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Energy</th>
+      <th>Acquisti</th>
+      <th>Unita misura</th>
+      <th>Note</th>
+      <th>Quantita</th>
+      <th>Costo</th>
+      <th>Anno riferimento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acquired_energies.each do |acquired_energy| %>
+      <tr>
+        <td><%= acquired_energy.energy %></td>
+        <td><%= acquired_energy.acquisti %></td>
+        <td><%= acquired_energy.unita_misura %></td>
+        <td><%= acquired_energy.note %></td>
+        <td><%= acquired_energy.quantita %></td>
+        <td><%= acquired_energy.costo %></td>
+        <td><%= acquired_energy.anno_riferimento %></td>
+        <td><%= link_to 'Show', acquired_energy %></td>
+        <td><%= link_to 'Edit', edit_acquired_energy_path(acquired_energy) %></td>
+        <td><%= link_to 'Destroy', acquired_energy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Acquired Energy', new_acquired_energy_path %>

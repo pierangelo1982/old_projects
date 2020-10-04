@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @orderline.order %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @orderline.product %>
+</p>
+
+<%= link_to 'Edit', edit_orderline_path(@orderline) %> |
+<%= link_to 'Back', orderlines_path %>

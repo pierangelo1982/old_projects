@@ -1,0 +1,45 @@
+<%= form_with(model: thermal_production, local: true) do |form| %>
+  <% if thermal_production.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thermal_production.errors.count, "error") %> prohibited this thermal_production from being saved:</h2>
+
+      <ul>
+      <% thermal_production.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :company_id, 'Azienda' %>
+    <% if params[:company].present? %>
+    <%= form.collection_select :company_id, Company.where('id=?', params[:company]), :id, :denominazione, class: 'form-control', required: true %>
+    <% else %>
+    <%= form.collection_select :company_id, Company.all, :id, :denominazione, {include_blank: true}, class: 'form-control', required: true %>
+    <% end %>
+  </div>
+
+
+
+  <!-- Items raw material items -->
+  <div class="col col-xs-12 col-sm-12" id="raw_material_items">
+    <h4 class="light">Descrizione macchine per produzione acqua calda/riscaldamento/fredda/raffrescamento</h4>
+      <%= form.fields_for (:thermal_production_items) do |item| %>
+        <%= render 'thermal_production_item_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :thermal_production_items, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :thermal_production_note, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'SALVA', class: "btn btn-salva" %>
+  </div>
+<% end %>

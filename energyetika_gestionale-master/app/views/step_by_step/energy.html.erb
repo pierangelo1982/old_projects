@@ -1,0 +1,57 @@
+energy.html.erb
+
+<div class="container">
+
+<%= form_for @company, url: wizard_path, method: :put do |f| %>
+
+<div class="row">
+
+  <%= f.fields_for :energy, Energy.new do |form| %>
+
+	    <!-- acquired energies -->
+	  <div class="col col-xs-12 col-sm-12" id="acquired_energy">
+	    <h4 class="light">Energia – acquisti</h4>
+	    <p>
+	    </p>
+	      <%= form.fields_for (:acquired_energies) do |item| %>
+	        <%= render 'acquired_energy_fields', f: item %>
+	      <% end %>
+	      <div class="col s12">
+	      <%= link_to_add_association 'AGGIUNGI RIGA', form, :acquired_energies, { class:'btn btn-aggiungi' } %>
+	      </div>
+	  </div>
+	  <!-- fine -->
+
+
+	  <!-- Items raw material items -->
+	  <div class="col xol-xs-12 col-sm-12" id="produced_energy">
+	    <h4 class="light">Energia – produzione:</h4>
+	    <p>
+	    </p>
+	      <%= form.fields_for (:produced_energies) do |item| %>
+	        <%= render 'produced_energy_fields', f: item %>
+	      <% end %>
+	      <div class="col s12">
+	      <%= link_to_add_association 'AGGIUNGI RIGA', form, :produced_energies, { class:'btn btn-aggiungi' } %>
+	      </div>
+	  </div>
+	  <!-- fine -->
+
+
+	  <div class="col col-xs-12 col-sm-12">
+	    <%= form.label :descrizione %>
+	    <%= form.text_area :descrizione, id: :energy_descrizione, class: 'form-control' %>
+	  </div>
+
+
+   <% end %>
+  </div><!-- /row -->
+  
+  <div class="actions">
+      <%= f.submit "Continue" %>
+  </div>
+
+
+<% end %>
+
+</div>

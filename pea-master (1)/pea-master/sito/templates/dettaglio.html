@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+	<div class="col-xs-12">
+
+	</div>
+
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		{% include 'components/galleriadettaglio.html' %}
+	</div>
+
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		<h3 class="produzionetitolo">
+			{% if session_language = 'uk' %} {{lavori.titolo_uk}} {% else %} {{lavori.titolo}} {% endif %}
+		</h3>
+		<p class="descrizione">
+			{% if session_language = 'uk' %}
+				{{lavori.body_uk|safe}}
+			{% else %}
+				{{lavori.body|safe}}
+			{% endif %}
+		</p>
+		<hr>
+		{% include 'components/popupdettaglio.html' %}
+	</div>
+
+<div class="col-xs-12">
+	{% include 'components/sharesocial.html' %}
+</div>
+
+<div class="col-xs-12">
+	<br>
+</div>
+
+
+
+</div><!-- container -->
+
+{% endblock %}

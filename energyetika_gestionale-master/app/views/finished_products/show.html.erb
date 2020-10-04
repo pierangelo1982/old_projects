@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Raw material:</strong>
+  <%= @finished_product.raw_material %>
+</p>
+
+<p>
+  <strong>Vprodotto:</strong>
+  <%= @finished_product.vprodotto %>
+</p>
+
+<p>
+  <strong>Unita misura:</strong>
+  <%= @finished_product.unita_misura %>
+</p>
+
+<p>
+  <strong>Origine dato:</strong>
+  <%= @finished_product.origine_dato %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @finished_product.note %>
+</p>
+
+<p>
+  <strong>Ore marcia:</strong>
+  <%= @finished_product.ore_marcia %>
+</p>
+
+<p>
+  <strong>Anno riferimento:</strong>
+  <%= @finished_product.anno_riferimento %>
+</p>
+
+<%= link_to 'Edit', edit_finished_product_path(@finished_product) %> |
+<%= link_to 'Back', finished_products_path %>

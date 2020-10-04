@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<div class="container">
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 storiaindex">
+		<h3>
+			{% if session_language = 'uk' %}OUR HISTORY{% else %}LA NOSTRA STORIA{% endif %}
+		</h3>
+		<p class="storiatext">
+			{% if session_language = 'uk' %}
+				The Carpentry Pea it's founded in the mid-70s in a small workshop, thanks to the passion of Mr. Natalino Pea, strong of previous experience at a leading restorer of the area.<br>
+				Gradually the company expands specializing in custom manufacturing of furniture for shops, hotels and bars, not to mention the home furniture such as kitchens, tables, bookcases, cabinets .... The care and meticulousness in the production of Mr. Pea and his staff give at the brand Falegnameria Pea not only add style but also quality and refinement.<br>
+				The constant updating of its equipment and the use of the latest machinery, allow a precise and constantly under control woodworking, to get optimal results.
+			{% else %}
+				La Falegnameria Pea nasce a metà degli anni 70 in un piccolo laboratorio, grazie alla passione del signor Natalino Pea, nata dalla precedente esperienza presso un importante restauratore della zona.<br>
+				Poco alla volta l’azienda si espande specializzandosi nella produzione su misura di arredamenti per negozi, alberghi e birrerie, senza tralasciare i mobili per la casa quali cucine, tavoli, librerie, armadi….
+				La cura e la meticolosità nella produzione del signor Pea e dei suoi collaboratori conferiscono al marchio Falegnameria Pea non solo un tocco di stile, ma anche qualità e raffinatezza.<br>
+				Il costante aggiornamento delle proprie attrezzature e l'utilizzo di macchinari di ultima generazione, permettono una lavorazione del legno precisa e costantemente sotto controllo, per avere risultati ottimali.
+			{% endif %}
+		</p>
+		{% include 'components/sharesocial.html' %}
+		<br><br>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		{% include 'components/woogallery.html' %}
+		<!--img src="{% static 'img/slider/slider1.jpg' %}" class="img-responsive storiaindex" -->
+	</div>
+</div><!-- container -->
+
+
+{% endblock %}

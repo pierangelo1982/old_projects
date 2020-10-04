@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'componenti/revolution.html' %}
+
+	<!-- BANNER RED -->
+   <div class="col-xs-12 bandred">
+      <h2 class="redbandtext">SOLUZIONI PERSONALIZZATE PER OGNI ESIGENZA...</h2>
+    </div>
+    <!-- END BANNER RED -->
+
+<div class="container">
+<section id="categoria">
+	{% for cat in categorie_list|slice:':4' %}
+	<div class="row">
+	<div class="col-xs-12"><h3 class="redband">{{cat.titolo}}</h3></div>
+		{% for prodotti in cat.prodotti_set.all|slice:':4' %}
+			{% include 'componenti/offerte.html' %}
+		{% endfor %}
+		<div class="col-xs-12">
+			<a href="{% url 'categoria' cat.id %}">
+				<i class="fa fa-arrow-circle-right fa-1x"> Vedi tutti i prodotti della categoria {{cat.titolo}}</i>
+			</a>
+		</div>
+	</div><!-- ROW -->
+</section>
+	{% endfor %}
+
+
+
+</div><!-- CONTAINER -->
+
+
+
+{% endblock %}

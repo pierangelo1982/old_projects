@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: one
+  cabine_media_tensione: false
+  numero_cabine: 1
+  note: MyText
+
+two:
+  company: two
+  cabine_media_tensione: false
+  numero_cabine: 1
+  note: MyText

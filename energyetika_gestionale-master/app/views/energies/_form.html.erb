@@ -1,0 +1,68 @@
+<%= form_with(model: energy, local: true) do |form| %>
+  <% if energy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(energy.errors.count, "error") %> prohibited this energy from being saved:</h2>
+
+      <ul>
+      <% energy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :company_id, 'Azienda' %>
+    <% if params[:company].present? %>
+    <%= form.hidden_field :company_id, id: :technical_datum_company_id, value: params[:company] %>
+    <%= form.collection_select :company_id, Company.where('id=?', params[:company]), :id, :denominazione, class: 'form-control', required: true %>
+    <% else %>
+    <%= form.collection_select :company_id, Company.all, :id, :denominazione, {include_blank: true}, class: 'form-control', required: true %>
+    <% end %>
+  </div>
+
+
+
+  <!-- acquired energies -->
+  <div class="col col-xs-12 col-sm-12" id="acquired_energy">
+    <h4 class="light">Energia – acquisti</h4>
+    <p>
+    </p>
+      <%= form.fields_for (:acquired_energies) do |item| %>
+        <%= render 'acquired_energy_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :acquired_energies, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+
+  <!-- Items raw material items -->
+  <div class="col xol-xs-12 col-sm-12" id="produced_energy">
+    <h4 class="light">Energia – produzione:</h4>
+    <p>
+    </p>
+      <%= form.fields_for (:produced_energies) do |item| %>
+        <%= render 'produced_energy_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :produced_energies, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+
+
+
+
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :descrizione %>
+    <%= form.text_area :descrizione, id: :energy_descrizione, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

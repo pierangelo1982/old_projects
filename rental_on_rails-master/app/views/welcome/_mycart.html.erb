@@ -1,0 +1,20 @@
+<h3>My CART</h3>
+<% Product.where('id IN (?)', @mycart.to_a).each do |pro| %>
+
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <%= image_tag pro.image.url(:big), class: 'img-responsive' %>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <h4><%= pro.title %></h4>
+    <p>
+      <%= pro.model %></br>
+      <%= pro.manufacturer.title %>
+    </p>
+  </div>
+  <div class="col-xs-12">
+    <hr>
+  </div>
+<% end %>
+
+<%= link_to 'Richiedi Preventivo', new_order_path, class: 'btn btn-primary' %>
+<%= link_to 'Cancella', reset_cart_orders_path(), class: 'btn btn-danger' %>

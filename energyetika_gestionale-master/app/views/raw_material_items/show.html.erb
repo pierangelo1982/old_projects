@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Raw material:</strong>
+  <%= @raw_material_item.raw_material %>
+</p>
+
+<p>
+  <strong>Nome materia:</strong>
+  <%= @raw_material_item.nome_materia %>
+</p>
+
+<p>
+  <strong>Unita misura:</strong>
+  <%= @raw_material_item.unita_misura %>
+</p>
+
+<p>
+  <strong>Origine dato:</strong>
+  <%= @raw_material_item.origine_dato %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @raw_material_item.note %>
+</p>
+
+<p>
+  <strong>Quantita:</strong>
+  <%= @raw_material_item.quantita %>
+</p>
+
+<p>
+  <strong>Anno riferimento:</strong>
+  <%= @raw_material_item.anno_riferimento %>
+</p>
+
+<%= link_to 'Edit', edit_raw_material_item_path(@raw_material_item) %> |
+<%= link_to 'Back', raw_material_items_path %>

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% include 'components/revolution.html' %}
+
+	<h3 class="sloganindex">
+		{% if session_language = 'uk' %}
+			Customized production of:<br>
+			furniture for shops, hotels, bars, home furniture, kitchen furniture, tables, bookcases, cabinets.
+		{% else %}
+			Produzione su misura di:<br>
+			arredamenti per negozi, alberghi, birrerie, mobili per la casa, cucine, tavoli, librerie, armadi.
+		{% endif %}
+	</h3>
+
+{% endblock %}

@@ -1,0 +1,2 @@
+module ProducedEnergiesHelper
+end

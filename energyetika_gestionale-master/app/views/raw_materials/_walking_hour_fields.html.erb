@@ -1,0 +1,41 @@
+<div class="col col-sm-12 cocoonx">
+
+	<div class="col s10">
+    <div class="row">
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :veicolo, 'Mezzo di Trasporto' %>
+        <%= f.text_field :veicolo, id: :walking_hour_veicolo, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :unita_misura, 'Unità di Misura (ore ecc...)' %>
+        <%= f.text_field :unita_misura, id: :walking_hour_unita_misura, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :origine_dato %>
+        <%= f.text_field :origine_dato, id: :walking_hour_origine_dato, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :ore_marcia %>
+        <%= f.text_field :ore_marcia, id: :walking_hour_ore_marcia, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :anno_riferimento %>
+        <%= f.text_field :anno_riferimento, id: :walking_hour_anno_riferimento, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-12">
+        <%= f.label :note %>
+        <%= f.text_area :note, id: :walking_hour_note, class: 'form-control' %>
+      </div>
+    </div><!-- /row -->
+	</div>
+
+	<div class="col s2">
+	<%=link_to_remove_association("RIMUOVI RIGA", f, { wrapper_class: 'cocoonx', class: 'btn btn-rimuovi'}) %>
+	</div>
+
+</div>

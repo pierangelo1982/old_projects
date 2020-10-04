@@ -1,0 +1,21 @@
+
+<!-- Place somewhere in the <body> of your page -->
+<div class="flexslider" style="margin-top: 20px;">
+  <ul class="slides">
+    {% for immagini in lavori.galleria.all %}
+    <li>{% load cropping %}
+      <img src="{% cropped_thumbnail immagini "cropping" %}" class="img-responsive wooimg" alt="{{immagini.titolo}}" title="{{immagini.titolo}}" />
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+<script type="text/javascript">
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
+</script>

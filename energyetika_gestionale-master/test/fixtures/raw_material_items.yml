@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  raw_material: one
+  nome_materia: MyString
+  unita_misura: MyString
+  origine_dato: MyString
+  note: MyText
+  quantita: 9.99
+  anno_riferimento: MyString
+
+two:
+  raw_material: two
+  nome_materia: MyString
+  unita_misura: MyString
+  origine_dato: MyString
+  note: MyText
+  quantita: 9.99
+  anno_riferimento: MyString

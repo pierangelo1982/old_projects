@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Compressor:</strong>
+  <%= @compressor_item.compressor %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @compressor_item.marca %>
+</p>
+
+<p>
+  <strong>Modello:</strong>
+  <%= @compressor_item.modello %>
+</p>
+
+<p>
+  <strong>Potenza:</strong>
+  <%= @compressor_item.potenza %>
+</p>
+
+<p>
+  <strong>Anno:</strong>
+  <%= @compressor_item.anno %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @compressor_item.note %>
+</p>
+
+<%= link_to 'Edit', edit_compressor_item_path(@compressor_item) %> |
+<%= link_to 'Back', compressor_items_path %>

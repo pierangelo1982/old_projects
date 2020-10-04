@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Energy:</strong>
+  <%= @produced_energy.energy %>
+</p>
+
+<p>
+  <strong>Produzione:</strong>
+  <%= @produced_energy.produzione %>
+</p>
+
+<p>
+  <strong>Unita misura:</strong>
+  <%= @produced_energy.unita_misura %>
+</p>
+
+<p>
+  <strong>Fonte:</strong>
+  <%= @produced_energy.fonte %>
+</p>
+
+<p>
+  <strong>Quantita:</strong>
+  <%= @produced_energy.quantita %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @produced_energy.costo %>
+</p>
+
+<p>
+  <strong>Anno riferimento:</strong>
+  <%= @produced_energy.anno_riferimento %>
+</p>
+
+<%= link_to 'Edit', edit_produced_energy_path(@produced_energy) %> |
+<%= link_to 'Back', produced_energies_path %>

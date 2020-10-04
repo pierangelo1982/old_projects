@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+<h3 class="page-title">Dati tecnici – Stabilimento – S.2</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Company</th>
+      <th>Superficie totale (m2)</th>
+      <th>Volume totale (m3)</th>
+      <th>Numero impiegati</th>
+      <th>Numero operai</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @technical_data.each do |technical_datum| %>
+      <tr>
+        <td><%= technical_datum.company.denominazione %></td>
+        <td><%= technical_datum.superficie_totale %></td>
+        <td><%= technical_datum.volume_totale %></td>
+        <td><%= technical_datum.numero_impiegati %></td>
+        <td><%= technical_datum.numero_operai %></td>
+        <td><%= link_to 'Show', technical_datum %></td>
+        <td><%= link_to 'Edit', edit_technical_datum_path(technical_datum) %></td>
+        <td><%= link_to 'Destroy', technical_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuova Dati tecnici – Stabilimento – S.2', new_technical_datum_path, class: 'btn btn-energ btn-sm table-btn' %>
+
+
+</div>

@@ -1,0 +1,36 @@
+<div class="col col-sm-12 cocoonx">
+
+	<div class="col s10">
+    <div class="row">
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :trasformatore %>
+        <%= f.text_field :trasformatore, id: :transformer_item_trasformatore, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :marca %>
+        <%= f.text_field :marca, id: :transformer_item_marca, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :modello %>
+        <%= f.text_field :modello, id: :transformer_item_modello, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :tensione, 'Tensione IN/OUT (V)' %>
+        <%= f.text_field :tensione, id: :transformer_item_tensione, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-12">
+        <%= f.label :note %>
+        <%= f.text_area :note, id: :transformer_item_note, class: 'form-control' %>
+      </div>
+    </div><!-- /row -->
+	</div>
+
+	<div class="col col-xs-12">
+	<%=link_to_remove_association("RIMUOVI RIGA", f, { wrapper_class: 'cocoonx', class: 'btn btn-rimuovi'}) %>
+	</div>
+
+</div>

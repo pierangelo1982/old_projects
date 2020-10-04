@@ -1,0 +1,2 @@
+module WalkingHoursHelper
+end

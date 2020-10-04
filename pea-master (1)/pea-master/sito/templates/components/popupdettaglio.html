@@ -1,0 +1,7 @@
+{% for immagini in lavori.galleria.all %}
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="margin-bottom: 30px"> 
+	<a href="{{MEDIA_URL}}/{{immagini.image}}" data-lightbox="galleria{{lavori.id}}" alt="{{immagini.titolo}}" data-title="{{lavori.titolo}}">{% load cropping %}
+		<img src="{% cropped_thumbnail immagini "cropping" %}" class="img-responsive popimg">
+	</a>
+</div>
+{% endfor %}

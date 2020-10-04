@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FALEGNAMERIA PEA | produzione arredamenti su misura</title>
+    <meta name="description" content="La Falegnameria attiva nella produzione su misura di arredamenti per negozi, alberghi e birrerie, mobili per la casa quali cucine, tavoli, librerie, armadi">
+    <meta name="keywords" content="design, furniture, mobili, armadi, arredamenti, falegnameria, cucina, tavoli, negozi, alberghi, legno, italia,rovato, brescia, artigianato">
+    <meta property="og:title" content="Falegnameria Pea | produzione arredamenti su misura" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.falegnameriapea.it/" />
+    <!-- meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+
+  <!-- SHARE THIS -->
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "8268944a-900a-49af-a556-4374bbb32b03", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+	<!-- FONT -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+
+    <!-- SLIDER REVOLUTION -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/style.css' %}" media="screen" />
+    <script type="text/javascript" src="{% static 'rs-plugin/js/jquery.themepunch.plugins.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/settings.css' %}" media="screen" />
+
+      <!-- lightbox -->
+    <script src="{% static 'js/lightbox.min.js' %}"></script>
+    <link href="{% static 'css/lightbox.css' %}" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/flexslider.css' %}" rel="stylesheet">
+    <link href="{% static 'stile.css' %}" rel="stylesheet">
+  </head>
+
+
+  <body>
+{% block menu %}
+	{% include 'components/menu.html' %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+	{% include 'components/footer.html' %}
+{% endblock %}
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- ANALYTICS -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-61548249-1', 'auto');
+      ga('send', 'pageview');
+  </script><!-- ANALYTICS -->
+  </body>
+</html>	

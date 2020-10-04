@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="container-fluid">
+<h3 class="page-title">Energia – trasformatori - S.5</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Company</th>
+      <th>Cabine media tensione</th>
+      <th>Numero cabine</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transformers.each do |transformer| %>
+      <tr>
+        <td><%= transformer.company %></td>
+        <td><%= transformer.cabine_media_tensione %></td>
+        <td><%= transformer.numero_cabine %></td>
+        <td><%= transformer.note %></td>
+        <td><%= link_to 'Show', transformer %></td>
+        <td><%= link_to 'Edit', edit_transformer_path(transformer) %></td>
+        <td><%= link_to 'Destroy', transformer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crea Scheda Energia – trasformatori - S.5', new_transformer_path, class: 'btn btn-energ btn-sm table-btn' %>
+
+
+</div>

@@ -1,0 +1,26 @@
+{% load staticfiles %}
+
+<!-- Place somewhere in the <body> of your page -->
+<div class="flexslider">
+  <ul class="slides">
+    <li>
+      <img src="{% static 'img/slider/slider1.jpg' %}" class="img-responsive wooimg" />
+    </li>
+    <li>
+      <img src="{% static 'img/slider/slider2.jpg' %}" class="img-responsive wooimg"/>
+    </li>
+    <li>
+      <img src="{% static 'img/slider/slider3.jpg' %}" class="img-responsive wooimg" />
+    </li>
+  </ul>
+</div>
+
+
+<script type="text/javascript">
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
+</script>

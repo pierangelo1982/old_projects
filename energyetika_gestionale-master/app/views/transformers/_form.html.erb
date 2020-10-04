@@ -1,0 +1,58 @@
+<%= form_with(model: transformer, local: true) do |form| %>
+  <% if transformer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transformer.errors.count, "error") %> prohibited this transformer from being saved:</h2>
+
+      <ul>
+      <% transformer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col col-xs-12 col-sm-12">
+      <%= form.label :company_id, 'Azienda' %>
+      <% if params[:company].present? %>
+      <%= form.collection_select :company_id, Company.where('id=?', params[:company]), :id, :denominazione, class: 'form-control', required: true %>
+      <% else %>
+      <%= form.collection_select :company_id, Company.all, :id, :denominazione, {include_blank: true}, class: 'form-control', required: true %>
+      <% end %>
+    </div>
+
+    <div class="col col-xs-12 col-sm-6">
+      <br>
+      <%= form.label :cabine_media_tensione, 'SONO PRESENTI CABINE DI MEDIA TENSIONE?' %>
+      <%= form.check_box :cabine_media_tensione, id: :transformer_cabine_media_tensione %>
+    </div>
+
+    <div class="col col-xs-12 col-sm-6">
+      <%= form.label :numero_cabine %>
+      <%= form.number_field :numero_cabine, id: :transformer_numero_cabine, class: 'form-control' %>
+    </div>
+
+
+  <!-- Items raw material items -->
+  <div class="col s12" id="transformer_items">
+    <h4 class="light">trasformatori</h4>
+      <%= form.fields_for (:transformer_items) do |item| %>
+        <%= render 'transformer_item_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :transformer_items, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :transformer_note, class: 'form-control' %>
+  </div>
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.submit 'Salva', class: "btn btn-salva" %>
+  </div>
+
+</div>
+<% end %>

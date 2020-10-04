@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    build: .
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+        #- .:/usr/src/motowork_gestionale
+        - /home/energyetika-docker/energyetika_gestionale:/usr/src/motowork_gestionale
+    expose:
+      - "3000"
+    environment:
+      RACK_ENV: production
+      RAILS_ENV: production
+    ports:
+       - 3004:3000
+    external_links:
+      - docker-mysql:db
+    network_mode: bridge
+    restart: always

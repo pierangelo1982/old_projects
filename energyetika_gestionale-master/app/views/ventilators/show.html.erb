@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <h3 class="page-title">Ventilatori – trattamento aria - S.9<br>
+  <%= @ventilator.company.denominazione %>
+</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Marca</th>
+      <th>Modello</th>
+      <th>Potenza</th>
+      <th>Anno</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ventilator.ventilator_items.each do |ventilator_item| %>
+      <tr>
+        <td><%= ventilator_item.marca %></td>
+        <td><%= ventilator_item.modello %></td>
+        <td><%= ventilator_item.potenza %></td>
+        <td><%= ventilator_item.anno %></td>
+        <td><%= ventilator_item.note %></td>
+        <td><%= link_to 'Show', ventilator_item %></td>
+        <td><%= link_to 'Edit', edit_ventilator_item_path(ventilator_item) %></td>
+        <td><%= link_to 'Destroy', ventilator_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<p>
+  <strong>Note:</strong>
+  <%= @ventilator.note %>
+</p>
+
+<%= link_to 'Edit', edit_ventilator_path(@ventilator) %> |
+<%= link_to 'Back', ventilators_path %>
+
+
+</div>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+
+  <h3 class="page-title">Ventilatori – trattamento aria - S.9</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Company</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ventilators.each do |ventilator| %>
+      <tr>
+        <td><%= ventilator.company.denominazione %></td>
+        <td><%= ventilator.note %></td>
+        <td><%= link_to 'Show', ventilator %></td>
+        <td><%= link_to 'Edit', edit_ventilator_path(ventilator) %></td>
+        <td><%= link_to 'Destroy', ventilator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crea Scheda Ventilatori – trattamento aria - S.9', new_ventilator_path, class: 'btn btn-energ btn-sm table-btn' %>
+
+</div>

@@ -1,0 +1,53 @@
+transformer.html.erb
+
+<div class="container">
+
+<%= form_for @company, url: wizard_path, method: :put do |f| %>
+
+<div class="row">
+
+  <%= f.fields_for :transformer, Transformer.new do |form| %>
+
+
+	<div class="col col-xs-12 col-sm-6">
+      <br>
+      <%= form.label :cabine_media_tensione, 'SONO PRESENTI CABINE DI MEDIA TENSIONE?' %>
+      <%= form.check_box :cabine_media_tensione, id: :transformer_cabine_media_tensione %>
+    </div>
+
+    <div class="col col-xs-12 col-sm-6">
+      <%= form.label :numero_cabine %>
+      <%= form.number_field :numero_cabine, id: :transformer_numero_cabine, class: 'form-control' %>
+    </div>
+
+
+  <!-- Items raw material items -->
+  <div class="col s12" id="transformer_items">
+    <h4 class="light">trasformatori</h4>
+      <%= form.fields_for (:transformer_items) do |item| %>
+        <%= render 'transformer_item_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :transformer_items, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :transformer_note, class: 'form-control' %>
+  </div>
+
+
+   <% end %>
+  </div><!-- /row -->
+  
+  <div class="actions">
+      <%= f.submit "Continue" %>
+  </div>
+
+
+<% end %>
+
+</div>

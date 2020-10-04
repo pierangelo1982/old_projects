@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Walking Hours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Raw material</th>
+      <th>Veicolo</th>
+      <th>Unita misura</th>
+      <th>Origine dato</th>
+      <th>Note</th>
+      <th>Ore marcia</th>
+      <th>Anno riferimento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @walking_hours.each do |walking_hour| %>
+      <tr>
+        <td><%= walking_hour.raw_material %></td>
+        <td><%= walking_hour.veicolo %></td>
+        <td><%= walking_hour.unita_misura %></td>
+        <td><%= walking_hour.origine_dato %></td>
+        <td><%= walking_hour.note %></td>
+        <td><%= walking_hour.ore_marcia %></td>
+        <td><%= walking_hour.anno_riferimento %></td>
+        <td><%= link_to 'Show', walking_hour %></td>
+        <td><%= link_to 'Edit', edit_walking_hour_path(walking_hour) %></td>
+        <td><%= link_to 'Destroy', walking_hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Walking Hour', new_walking_hour_path %>

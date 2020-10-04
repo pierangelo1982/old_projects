@@ -1,0 +1,41 @@
+<div class="col col-sm-12 cocoonx">
+
+	<div class="col s10">
+    <div class="row">
+			<div class="col col-xs-12 col-sm-6">
+				<%= f.label :caldo_freddo, 'Calco/Freddo' %>
+				<%= f.text_field :caldo_freddo, id: :thermal_production_item_caldo_freddo, class: 'form-control' %>
+			</div>
+
+			<div class="col col-xs-12 col-sm-6">
+				<%= f.label :utenza %>
+				<%= f.text_field :utenza, id: :thermal_production_item_utenza, class: 'form-control' %>
+			</div>
+
+			<div class="col col-xs-12 col-sm-3">
+				<%= f.label :nome_generatore %>
+				<%= f.text_field :nome_generatore, id: :thermal_production_item_nome_generatore, class: 'form-control' %>
+			</div>
+
+			<div class="col col-xs-12 col-sm-3">
+				<%= f.label :matricola %>
+				<%= f.text_field :matricola, id: :thermal_production_item_matricola, class: 'form-control' %>
+			</div>
+
+			<div class="col col-xs-12 col-sm-3">
+				<%= f.label :potenza %>
+				<%= f.text_field :potenza, id: :thermal_production_item_potenza, class: 'form-control' %>
+			</div>
+
+			<div class="col col-xs-12 col-sm-3">
+				<%= f.label :dest_acs, 'DEST. (ACS)' %>
+				<%= f.text_field :dest_acs, id: :thermal_production_item_dest_acs, class: 'form-control' %>
+			</div>
+    </div><!-- /row -->
+	</div>
+
+	<div class="col s2">
+	<%=link_to_remove_association("RIMUOVI RIGA", f, { wrapper_class: 'cocoonx', class: 'btn btn-rimuovi'}) %>
+	</div>
+
+</div>

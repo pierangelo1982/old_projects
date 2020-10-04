@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Products</h1>
+ <%= @prova %>
+
+ <h3> SESSIONE: <%= cookies[:tmp_data] %>;</h3>
+
+ <%= link_to 'reset cookies', reset_cart_orders_path() %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Model</th>
+      <th>Manufacturer</th>
+      <th>Typology</th>
+      <th>Image</th>
+      <th>Price</th>
+      <th>CARRELLO</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.model %></td>
+        <td><%= product.manufacturer.title %></td>
+        <td><%= product.typology.name %></td>
+        <!--td><%= product.image %></td -->
+        <td><%= image_tag product.image.url(:thumb) %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'aggiungi al carrello', {:controller => "orders", :action => "cart", :id => product.id } %></td>
+        <td><%= link_to 'Cancella Prodotto', {:controller => "orders", :action => "delete_item", :id => product.id } %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
+
+
+

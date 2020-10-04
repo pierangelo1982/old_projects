@@ -1,0 +1,27 @@
+<%= form_with(model: thermal_energy_production, local: true) do |form| %>
+  <% if thermal_energy_production.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thermal_energy_production.errors.count, "error") %> prohibited this thermal_energy_production from being saved:</h2>
+
+      <ul>
+      <% thermal_energy_production.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id, id: :thermal_energy_production_company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :thermal_energy_production_note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

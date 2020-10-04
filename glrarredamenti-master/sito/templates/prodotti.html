@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section id="prodotti">
+	<div class="container">
+
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<img src="{{MEDIA_URL}}/{{prodotti.image}}" class="img-responsive" title="" alt="">
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+			<h3>{{prodotti.titolo}}</h3>
+			<hr>
+			<p>{{prodotti.body|safe}}<p>
+			<br>
+			{% include 'componenti/social.html' %}
+		</div>
+
+
+	</div>
+</div>
+
+{% endblock %}

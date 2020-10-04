@@ -1,0 +1,97 @@
+<div class="container">
+
+<%= form_for @company, url: wizard_path, method: :put do |f| %>
+
+<%= @company.denominazione %>
+<div class="row">
+
+  <%= f.fields_for :technical_datum, TechnicalDatum.new do |form| %>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :superficie_totale, 'Superficie Totale (m2)' %>
+      <%= form.text_field :superficie_totale, id: :technical_datum_superficie_totale, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :superficie_produzione, 'Superficie Produzione (m2)' %>
+      <%= form.text_field :superficie_produzione, id: :technical_datum_superficie_produzione, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :superficie_uffici, 'Superficie Uffici (m2)' %>
+      <%= form.text_field :superficie_uffici, id: :technical_datum_superficie_uffici, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :superficie_magazzini, 'Superficie Magazzini(m2)' %>
+      <%= form.text_field :superficie_magazzini, id: :technical_datum_superficie_magazzini, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :volume_totale, 'Volume Totale (m3)' %>
+      <%= form.text_field :volume_totale, id: :technical_datum_volume_totale, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :volume_produzione, 'Volume Produzione (m3)' %>
+      <%= form.text_field :volume_produzione, id: :technical_datum_volume_produzione, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :volume_uffici, 'Volume Uffici (m3)' %>
+      <%= form.text_field :volume_uffici, id: :technical_datum_volume_uffici, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :volume_magazzini, 'Volume Magazzini (m3)' %>
+      <%= form.text_field :volume_magazzini, id: :technical_datum_volume_magazzini, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :dimensione_uffici, 'Dimensione Uffici (m2)' %>
+      <%= form.text_field :dimensione_uffici, id: :technical_datum_dimensione_uffici, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :servizi_igenici, 'Servizi Igienici (n°)' %>
+      <%= form.number_field :servizi_igenici, id: :technical_datum_servizi_igenici, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :dimensione_piazzale, 'Dimensione Piazzale/Giardini (m2)' %>
+      <%= form.text_field :dimensione_piazzale, id: :technical_datum_dimensione_piazzale, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-3">
+      <%= form.label :presenza_docce, 'Presenza Docce (n°)' %>
+      <%= form.number_field :presenza_docce, id: :technical_datum_presenza_docce, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-6">
+      <%= form.label :numero_impiegati, 'Numero Impiegati (n°)' %>
+      <%= form.number_field :numero_impiegati, id: :technical_datum_numero_impiegati, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-6">
+      <%= form.label :numero_operai, 'Numero operai (n°)' %>
+      <%= form.number_field :numero_operai, id: :technical_datum_numero_operai, class: 'form-control' %>
+    </div>
+
+    <div class="col col col-xs-12 col-sm-12">
+      <%= form.label :descrizione, 'Breve descrizione dell\'azienda del proesso produttivo e del sistema energetico' %>
+      <%= form.text_area :descrizione, id: :technical_datum_descrizione, class: 'form-control' %>
+    </div>
+
+    <% end %>
+  </div><!-- /row -->
+  
+  <div class="actions">
+      <%= f.submit "Continue" %>
+  </div>
+
+
+<% end %>
+
+
+
+</div>

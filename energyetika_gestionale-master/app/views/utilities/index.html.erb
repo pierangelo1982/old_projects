@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+
+  <h3 class="page-title">Utenze – censimento utenze - S.7</h3>
+
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th>Company</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @utilities.each do |utility| %>
+      <tr>
+        <td><%= utility.company.denominazione %></td>
+        <td><%= utility.note %></td>
+        <td><%= link_to 'Show', utility %></td>
+        <td><%= link_to 'Edit', edit_utility_path(utility) %></td>
+        <td><%= link_to 'Destroy', utility, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crea Scheda Utenze – censimento utenze - S.7', new_utility_path, class: 'btn btn-energ btn-sm table-btn' %>
+
+
+</div>

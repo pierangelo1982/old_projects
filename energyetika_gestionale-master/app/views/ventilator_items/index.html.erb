@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ventilator Items</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Compressor</th>
+      <th>Marca</th>
+      <th>Modello</th>
+      <th>Potenza</th>
+      <th>Anno</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ventilator_items.each do |ventilator_item| %>
+      <tr>
+        <td><%= ventilator_item.compressor %></td>
+        <td><%= ventilator_item.marca %></td>
+        <td><%= ventilator_item.modello %></td>
+        <td><%= ventilator_item.potenza %></td>
+        <td><%= ventilator_item.anno %></td>
+        <td><%= ventilator_item.note %></td>
+        <td><%= link_to 'Show', ventilator_item %></td>
+        <td><%= link_to 'Edit', edit_ventilator_item_path(ventilator_item) %></td>
+        <td><%= link_to 'Destroy', ventilator_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ventilator Item', new_ventilator_item_path %>

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container produzionecontainer">
+
+	<div class="col-xs-12">
+		<h3 class="produzionetitolo">
+			{% if session_language = 'uk' %}
+				{{categoria.titolo_uk}}
+			{% else %}
+				{{categoria.titolo}}
+			{% endif %}
+		</h3>
+	</div>
+
+	{% for lav in categoria.lavori_set.all %}
+	<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3"><!-- blocco -->
+			{% for immagini in lav.galleria.all|slice:':1' %}
+				{% load cropping %}
+				<img src="{% cropped_thumbnail immagini "croppingthumb" %}" class="img-responsive produzioimg" alt="{{cat.titolo}}" title="{{cat.titolo}}" />
+			{% endfor %}
+		<h4 class="produziotitolo">
+			{% if session_language = 'uk' %} {{lav.titolo_uk}} {% else %} {{lav.titolo}} {% endif %}
+			<span style="float: right">
+				<a href="{% url 'dettaglio' lav.id %}" alt="">
+					<i class="fa fa-bars"></i>
+				</a>
+				{% for immagini in lav.galleria.all|slice:':1' %}
+				<a href="{{MEDIA_URL}}/{{immagini.image}}" data-lightbox="galleria{{lav.id}}" alt="galleria fotografica" data-title="{{lav.titolo}}">
+					<i class="fa fa-camera"></i>
+				</a>
+				{% endfor %}
+			</span>
+		</h4>
+	</div><!-- blocco -->
+
+
+	<!-- POPUP GALLERY -->
+			{% for immagini in lav.galleria.all %}
+				<a href="{{MEDIA_URL}}/{{immagini.image}}" data-lightbox="galleria{{lav.id}}" alt="galleria fotografica" data-title="{{lav.titolo}}">
+				</a>
+			{% endfor %}
+	<!-- END POPUPGALLERY -->
+
+
+
+	{% endfor %}<!-- for lav in categoria.lavori_set.all -->
+
+</div><!-- container -->
+
+
+{% endblock %}

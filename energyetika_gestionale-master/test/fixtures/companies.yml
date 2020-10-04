@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin: one
+  denominazione: MyString
+  codfisc: MyString
+  piva: MyString
+  indirizzo: MyString
+  cap: MyString
+  citta: MyString
+  provincia: MyString
+  telefono: MyString
+  fax: MyString
+  email: MyString
+  web: MyString
+  n_dipendenti: MyString
+  n_impianti_produttivi: MyString
+  fatturato: MyString
+  iscrizione_elenco_energivori: false
+  descrizione: MyText
+  note: MyText
+  visura: MyString
+  bolletta: MyString
+
+two:
+  admin: two
+  denominazione: MyString
+  codfisc: MyString
+  piva: MyString
+  indirizzo: MyString
+  cap: MyString
+  citta: MyString
+  provincia: MyString
+  telefono: MyString
+  fax: MyString
+  email: MyString
+  web: MyString
+  n_dipendenti: MyString
+  n_impianti_produttivi: MyString
+  fatturato: MyString
+  iscrizione_elenco_energivori: false
+  descrizione: MyText
+  note: MyText
+  visura: MyString
+  bolletta: MyString

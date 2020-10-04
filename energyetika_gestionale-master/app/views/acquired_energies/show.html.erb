@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Energy:</strong>
+  <%= @acquired_energy.energy %>
+</p>
+
+<p>
+  <strong>Acquisti:</strong>
+  <%= @acquired_energy.acquisti %>
+</p>
+
+<p>
+  <strong>Unita misura:</strong>
+  <%= @acquired_energy.unita_misura %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @acquired_energy.note %>
+</p>
+
+<p>
+  <strong>Quantita:</strong>
+  <%= @acquired_energy.quantita %>
+</p>
+
+<p>
+  <strong>Costo:</strong>
+  <%= @acquired_energy.costo %>
+</p>
+
+<p>
+  <strong>Anno riferimento:</strong>
+  <%= @acquired_energy.anno_riferimento %>
+</p>
+
+<%= link_to 'Edit', edit_acquired_energy_path(@acquired_energy) %> |
+<%= link_to 'Back', acquired_energies_path %>

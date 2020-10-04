@@ -1,0 +1,38 @@
+utility.html.erb
+
+<div class="container">
+
+<%= form_for @company, url: wizard_path, method: :put do |f| %>
+
+<div class="row">
+
+  <%= f.fields_for :utility, Utility.new do |form| %>
+
+
+ <!-- Items raw material items -->
+  <div class="col s12" id="raw_material_items">
+    <h4 class="light">ELENCO MACCHINARI</h4>
+      <%= form.fields_for (:utility_items) do |item| %>
+        <%= render 'utility_item_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :utility_items, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :utility_note, class: 'form-control' %>
+  </div>
+
+  <% end %>
+  
+  <div class="actions">
+      <%= f.submit "Continue" %>
+  </div>
+
+
+<% end %>
+
+</div>

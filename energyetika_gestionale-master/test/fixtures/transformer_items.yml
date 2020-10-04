@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transformer: one
+  trasformatore: MyString
+  marca: MyString
+  modello: MyString
+  tensione: MyString
+  note: MyText
+
+two:
+  transformer: two
+  trasformatore: MyString
+  marca: MyString
+  modello: MyString
+  tensione: MyString
+  note: MyText

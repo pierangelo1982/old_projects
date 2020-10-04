@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Raw material:</strong>
+  <%= @walking_hour.raw_material %>
+</p>
+
+<p>
+  <strong>Veicolo:</strong>
+  <%= @walking_hour.veicolo %>
+</p>
+
+<p>
+  <strong>Unita misura:</strong>
+  <%= @walking_hour.unita_misura %>
+</p>
+
+<p>
+  <strong>Origine dato:</strong>
+  <%= @walking_hour.origine_dato %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @walking_hour.note %>
+</p>
+
+<p>
+  <strong>Ore marcia:</strong>
+  <%= @walking_hour.ore_marcia %>
+</p>
+
+<p>
+  <strong>Anno riferimento:</strong>
+  <%= @walking_hour.anno_riferimento %>
+</p>
+
+<%= link_to 'Edit', edit_walking_hour_path(@walking_hour) %> |
+<%= link_to 'Back', walking_hours_path %>

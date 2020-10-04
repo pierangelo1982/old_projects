@@ -1,0 +1,80 @@
+<%= form_with(model: raw_material, local: true) do |form| %>
+  <% if raw_material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(raw_material.errors.count, "error") %> prohibited this raw_material from being saved:</h2>
+
+      <ul>
+      <% raw_material.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :company_id, 'Azienda' %>
+    <% if params[:company].present? %>
+    <%= form.collection_select :company_id, Company.where('id=?', params[:company]), :id, :denominazione, class: 'form-control', required: true %>
+    <% else %>
+    <%= form.collection_select :company_id, Company.all, :id, :denominazione, {include_blank: true}, class: 'form-control', required: true %>
+    <% end %>
+  </div>
+
+
+  <!-- Items raw material items -->
+  <div class="col s12" id="raw_material_items">
+    <h4 class="light">Materie Prime:</h4>
+    <p>
+      Nella seguente tabella vengono indicate le materie prime in ingresso nello stabilimento e le quantità di
+      materia prima in ingresso (rif. Ultimo Anno)
+    </p>
+      <%= form.fields_for (:raw_material_items) do |item| %>
+        <%= render 'raw_material_item_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :raw_material_items, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+
+  <!-- Items Walking Hours -->
+  <div class="col s12" id="walking_hours">
+    <h4 class="light">Ore di Marcia:</h4>
+    <p>
+      Nella seguente tabella vengono indicate le quantità lavorate/ore funzionamento macchina (rif. Anno 2016)
+    </p>
+      <%= form.fields_for (:walking_hours) do |item| %>
+        <%= render 'walking_hour_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :walking_hours, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+
+  <!-- Items Walking Hours -->
+  <div class="col s12" id="finished_products">
+    <h4 class="light">Prodotto Finito:</h4>
+    <p>
+      Nella seguente tabella vengono indicate le quantità di prodotto finito (rif. Anno 2016)
+    </p>
+      <%= form.fields_for (:finished_products) do |item| %>
+        <%= render 'finished_product_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :finished_products, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :descrizione, 'Descrizione delle lavorazioni che subiscono le materie prime:' %>
+    <%= form.text_area :descrizione, id: :raw_material_descrizione, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'SALVA', class: "btn btn-salva" %>
+  </div>
+<% end %>

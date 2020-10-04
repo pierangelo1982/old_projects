@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col col-xs-12 col-sm-4"></div>
+
+    <div class="col">
+    <h3 class="page-title"><i class="fa fa-user-circle" aria-hidden="true"></i> Log in</h3>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="col col-xs-12">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="col col-xs-12">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me, 'Ricordami' %>
+        </div>
+      <% end -%>
+
+      <div class="actions text-center">
+        <%= f.submit "Log in", class: 'btn btn-energ btn-lg' %>
+      </div>
+    <% end %>
+
+    <%= render "admins/shared/links" %>
+    </div>
+
+
+    <div class="col col-xs-12 col-sm-4"></div>
+
+  </div><!-- /row -->
+</div><!-- /container -->

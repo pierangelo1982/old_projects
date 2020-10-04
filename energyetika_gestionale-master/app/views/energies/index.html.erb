@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Energies</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Company</th>
+      <th>Descrizione</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @energies.each do |energy| %>
+      <tr>
+        <td><%= energy.company.denominazione %></td>
+        <td><%= energy.descrizione %></td>
+        <td><%= link_to 'Show', energy %></td>
+        <td><%= link_to 'Edit', edit_energy_path(energy) %></td>
+        <td><%= link_to 'Destroy', energy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Energy', new_energy_path %>

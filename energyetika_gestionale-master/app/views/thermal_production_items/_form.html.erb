@@ -1,0 +1,52 @@
+<%= form_with(model: thermal_production_item, local: true) do |form| %>
+  <% if thermal_production_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(thermal_production_item.errors.count, "error") %> prohibited this thermal_production_item from being saved:</h2>
+
+      <ul>
+      <% thermal_production_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :thermal_production_id %>
+    <%= form.text_field :thermal_production_id, id: :thermal_production_item_thermal_production_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caldo_freddo %>
+    <%= form.text_field :caldo_freddo, id: :thermal_production_item_caldo_freddo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :utenza %>
+    <%= form.text_field :utenza, id: :thermal_production_item_utenza %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nome_generatore %>
+    <%= form.text_field :nome_generatore, id: :thermal_production_item_nome_generatore %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matricola %>
+    <%= form.text_field :matricola, id: :thermal_production_item_matricola %>
+  </div>
+
+  <div class="field">
+    <%= form.label :potenza %>
+    <%= form.text_field :potenza, id: :thermal_production_item_potenza %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dest_acs %>
+    <%= form.text_field :dest_acs, id: :thermal_production_item_dest_acs %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

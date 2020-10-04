@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Thermal Energy Productions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thermal_energy_productions.each do |thermal_energy_production| %>
+      <tr>
+        <td><%= thermal_energy_production.company %></td>
+        <td><%= thermal_energy_production.note %></td>
+        <td><%= link_to 'Show', thermal_energy_production %></td>
+        <td><%= link_to 'Edit', edit_thermal_energy_production_path(thermal_energy_production) %></td>
+        <td><%= link_to 'Destroy', thermal_energy_production, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thermal Energy Production', new_thermal_energy_production_path %>

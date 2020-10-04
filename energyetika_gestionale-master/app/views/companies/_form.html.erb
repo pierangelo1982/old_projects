@@ -1,0 +1,239 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col col-xs-12 col-sm-12">
+      <%= form.label :admin_id %>
+      <%= form.text_field :admin_id, id: :company_admin_id, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-12">
+      <%= form.label :denominazione %>
+      <%= form.text_field :denominazione, id: :company_denominazione, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :codfisc %>
+      <%= form.text_field :codfisc, id: :company_codfisc, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :piva %>
+      <%= form.text_field :piva, id: :company_piva, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-12">
+      <%= form.label :indirizzo %>
+      <%= form.text_field :indirizzo, id: :company_indirizzo, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <%= form.label :cap %>
+      <%= form.text_field :cap, id: :company_cap, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :citta %>
+      <%= form.text_field :citta, id: :company_citta, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-2">
+      <%= form.label :provincia %>
+      <%= form.text_field :provincia, id: :company_provincia, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :telefono %>
+      <%= form.text_field :telefono, id: :company_telefono, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :fax %>
+      <%= form.text_field :fax, id: :company_fax, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :company_email, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :web %>
+      <%= form.text_field :web, id: :company_web, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <%= form.label :n_dipendenti %>
+      <%= form.text_field :n_dipendenti, id: :company_n_dipendenti, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <%= form.label :n_impianti_produttivi %>
+      <%= form.text_field :n_impianti_produttivi, id: :company_n_impianti_produttivi, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <%= form.label :fatturato %>
+      <%= form.text_field :fatturato, id: :company_fatturato, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-12">
+      <%= form.check_box :iscrizione_elenco_energivori, id: :company_iscrizione_elenco_energivori %>
+      <%= form.label :iscrizione_elenco_energivori %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :descrizione %>
+      <%= form.text_area :descrizione, id: :company_descrizione, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :note %>
+      <%= form.text_area :note, id: :company_note, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :visura %>
+      <%= form.file_field :visura, id: :company_visura, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+      <%= form.label :bolletta %>
+      <%= form.file_field :bolletta, id: :company_bolletta, class: 'form-control' %>
+    </div>
+  </div><!-- /row -->
+
+
+
+
+  <!-- RAPPRESENTANTE LEGALE -->
+  <%= form.fields_for :company_president do |f| %>
+  <div id="rap_legale" class="row">
+    <div class="col-xs-12 col-sm-12">
+      <h4><i class="fa fa-user" aria-hidden="true"></i> RAPPRESENTATE LEGALE</h4>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.label :nome %>
+      <%= f.text_field :nome, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.label :cognome %>
+      <%= f.text_field :cognome, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <%= f.label :titolo %>
+      <%= f.text_field :titolo, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.label :codfisc %>
+      <%= f.text_field :codfisc, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.label :piva %>
+      <%= f.text_field :piva, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-12">
+      <%= f.label :indirizzo %>
+      <%= f.text_field :indirizzo, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.label :cap %>
+      <%= f.text_field :cap, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <%= f.label :citta %>
+      <%= f.text_field :citta, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      <%= f.label :provincia %>
+      <%= f.text_field :provincia, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.label :telefono %>
+      <%= f.text_field :telefono, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.label :cellulare %>
+      <%= f.text_field :cellulare, class: 'form-control' %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div><!-- /row -->
+<% end %>
+
+
+  <!-- PERSONA RIFERIMENTO - CONTATTO -->
+  <%= form.fields_for :company_contact_person do |f| %>
+  <div id="rif_pers" class="row">
+      <div class="col-xs-12 col-sm-12">
+        <h4><i class="fa fa-user" aria-hidden="true"></i> PERSONA RIFERIMENTO - CONTATTO</h4>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= f.label :nome %>
+        <%= f.text_field :nome, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= f.label :cognome %>
+        <%= f.text_field :cognome, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <%= f.label :titolo %>
+        <%= f.text_field :titolo, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= f.label :codfisc %>
+        <%= f.text_field :codfisc, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= f.label :piva %>
+        <%= f.text_field :piva, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-12">
+        <%= f.label :indirizzo %>
+        <%= f.text_field :indirizzo, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.label :cap %>
+        <%= f.text_field :cap, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <%= f.label :citta %>
+        <%= f.text_field :citta, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <%= f.label :provincia %>
+        <%= f.text_field :provincia, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.label :telefono %>
+        <%= f.text_field :telefono, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.label :cellulare %>
+        <%= f.text_field :cellulare, class: 'form-control' %>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+  </div><!-- /row -->
+  <% end %>
+
+  <div class="col-xs-12">
+    <br>
+    <%= form.submit 'SALVA', class: 'btn btn-energ btn-lg table-btn' %>
+  </div>
+
+<% end %>

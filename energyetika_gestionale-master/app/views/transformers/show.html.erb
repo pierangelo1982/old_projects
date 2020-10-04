@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h3 class="page-title">
+  Energia – trasformatori - S.5<br>
+  AZIENDA: <%= @transformer.company.denominazione %>
+</h3>
+
+<p>
+  <strong>Cabine media tensione:</strong>
+  <%= @transformer.cabine_media_tensione %>
+</p>
+
+<p>
+  <strong>Numero cabine:</strong>
+  <%= @transformer.numero_cabine %>
+</p>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Trasformatore</th>
+      <th>Marca</th>
+      <th>Modello</th>
+      <th>Tensione</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transformer.transformer_items.each do |transformer_item| %>
+      <tr>
+        <td><%= transformer_item.trasformatore %></td>
+        <td><%= transformer_item.marca %></td>
+        <td><%= transformer_item.modello %></td>
+        <td><%= transformer_item.tensione %></td>
+        <td><%= transformer_item.note %></td>
+        <td><%= link_to 'Show', transformer_item %></td>
+        <td><%= link_to 'Edit', edit_transformer_item_path(transformer_item) %></td>
+        <td><%= link_to 'Destroy', transformer_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<p>
+  <strong>Note:</strong>
+  <%= @transformer.note %>
+</p>
+
+<%= link_to 'Edit', edit_transformer_path(@transformer) %> |
+<%= link_to 'Back', transformers_path %>
+
+
+</div>

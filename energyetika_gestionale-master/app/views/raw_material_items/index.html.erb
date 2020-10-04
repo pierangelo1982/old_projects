@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Raw Material Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Raw material</th>
+      <th>Nome materia</th>
+      <th>Unita misura</th>
+      <th>Origine dato</th>
+      <th>Note</th>
+      <th>Quantita</th>
+      <th>Anno riferimento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raw_material_items.each do |raw_material_item| %>
+      <tr>
+        <td><%= raw_material_item.raw_material %></td>
+        <td><%= raw_material_item.nome_materia %></td>
+        <td><%= raw_material_item.unita_misura %></td>
+        <td><%= raw_material_item.origine_dato %></td>
+        <td><%= raw_material_item.note %></td>
+        <td><%= raw_material_item.quantita %></td>
+        <td><%= raw_material_item.anno_riferimento %></td>
+        <td><%= link_to 'Show', raw_material_item %></td>
+        <td><%= link_to 'Edit', edit_raw_material_item_path(raw_material_item) %></td>
+        <td><%= link_to 'Destroy', raw_material_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raw Material Item', new_raw_material_item_path %>

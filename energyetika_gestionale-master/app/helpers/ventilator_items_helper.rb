@@ -1,0 +1,2 @@
+module VentilatorItemsHelper
+end

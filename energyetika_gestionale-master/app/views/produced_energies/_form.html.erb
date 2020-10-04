@@ -1,0 +1,52 @@
+<%= form_with(model: produced_energy, local: true) do |form| %>
+  <% if produced_energy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(produced_energy.errors.count, "error") %> prohibited this produced_energy from being saved:</h2>
+
+      <ul>
+      <% produced_energy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :energy_id %>
+    <%= form.text_field :energy_id, id: :produced_energy_energy_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :produzione %>
+    <%= form.text_field :produzione, id: :produced_energy_produzione %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unita_misura %>
+    <%= form.text_field :unita_misura, id: :produced_energy_unita_misura %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fonte %>
+    <%= form.text_field :fonte, id: :produced_energy_fonte %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quantita %>
+    <%= form.text_field :quantita, id: :produced_energy_quantita %>
+  </div>
+
+  <div class="field">
+    <%= form.label :costo %>
+    <%= form.text_field :costo, id: :produced_energy_costo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :anno_riferimento %>
+    <%= form.text_field :anno_riferimento, id: :produced_energy_anno_riferimento %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

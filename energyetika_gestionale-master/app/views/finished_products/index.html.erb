@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Finished Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Raw material</th>
+      <th>Vprodotto</th>
+      <th>Unita misura</th>
+      <th>Origine dato</th>
+      <th>Note</th>
+      <th>Ore marcia</th>
+      <th>Anno riferimento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finished_products.each do |finished_product| %>
+      <tr>
+        <td><%= finished_product.raw_material %></td>
+        <td><%= finished_product.vprodotto %></td>
+        <td><%= finished_product.unita_misura %></td>
+        <td><%= finished_product.origine_dato %></td>
+        <td><%= finished_product.note %></td>
+        <td><%= finished_product.ore_marcia %></td>
+        <td><%= finished_product.anno_riferimento %></td>
+        <td><%= link_to 'Show', finished_product %></td>
+        <td><%= link_to 'Edit', edit_finished_product_path(finished_product) %></td>
+        <td><%= link_to 'Destroy', finished_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Finished Product', new_finished_product_path %>

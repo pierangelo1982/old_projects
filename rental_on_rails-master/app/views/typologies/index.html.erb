@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @typologies.each do |typology| %>
+      <tr>
+        <td><%= typology.name %></td>
+        <td><%= link_to 'Show', typology %></td>
+        <td><%= link_to 'Edit', edit_typology_path(typology) %></td>
+        <td><%= link_to 'Destroy', typology, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Typology', new_typology_path %>

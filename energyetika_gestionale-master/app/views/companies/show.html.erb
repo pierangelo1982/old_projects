@@ -1,0 +1,206 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p class="text-right">
+  <strong>Inserito da:</strong><br>
+  <i class="fa fa-user-circle" aria-hidden="true"></i>
+  <%= @company.admin.try(:email) %>
+</p>
+
+
+<h3 class="page-title"><i class="fa fa-address-card" aria-hidden="true"></i>
+  <%= @company.denominazione %>
+</h3>
+
+
+<div class="row">
+
+  <div class="col col-xs-12 col-sm-6">
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">Anagrafica Azienda</div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @company.denominazione %></h5>
+        <p class="card-text">
+          <strong>Codfisc:</strong><%= @company.codfisc %> - <strong>Piva:</strong> <%= @company.piva %>
+          <br>
+          <br>
+          <strong>Indirizzo:</strong><br>
+          <%= @company.indirizzo %><br>
+          <%= @company.cap %> - <%= @company.citta %> (<%= @company.provincia %>)
+          <br>
+          <br>
+          <strong>Telefono:</strong> <%= @company.telefono %> - <strong>Fax:</strong> <%= @company.fax %><br>
+          <strong>Email:</strong> <%= @company.email %><br>
+          <strong>Web:</strong> <%= @company.web %><br>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col col-xs-12 col-sm-6">
+    <div class="card bg-light mb-3">
+      <div class="card-header">Dati Azienda</div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">
+            <strong>Numero dipendenti:</strong>
+            <%= @company.n_dipendenti %>
+            <br>
+            <br>
+            <strong>Numero impianti produttivi:</strong>
+            <%= @company.n_impianti_produttivi %>
+            <br>
+            <br>
+            <strong>Fatturato:</strong>
+            <%= @company.fatturato %>
+            <br>
+            <br>
+            <strong>Iscrizione elenco energivori:</strong>
+            <%= @company.iscrizione_elenco_energivori %>
+            <br>
+            <br>
+            <strong>Visura:</strong>
+            <% if @company.visura_file_name %>
+            <a href="<%= @company.visura %>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+            <% end %>
+            <br>
+            <strong>Ultima Bolletta:</strong>
+            <% if @company.bolletta_file_name %>
+            <a href="<%= @company.bolletta %>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+            <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col col-xs-12 col-sm-6">
+    <div class="card text-white bg-info mb-3">
+      <div class="card-header">Rappresentate Legale</div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @company.company_president.nome %> <%= @company.company_president.cognome %></h5>
+        <p class="card-text">
+          <strong>Titolo:</strong>
+          <%= @company.company_president.titolo %>
+          <br>
+          <br>
+          <strong>codfisc:</strong><%= @company.company_president.codfisc %> - <strong>piva:</strong><%= @company.company_president.piva %>
+          <br>
+          <br>
+          <strong>indirizzo:</strong>
+          <%= @company.company_president.indirizzo %><br>
+          <%= @company.company_president.cap %> - <%= @company.company_president.citta %> (<%= @company.company_president.provincia %>)
+          <br>
+          <br>
+          <strong>telefono:</strong> <%= @company.company_president.telefono %> - <strong>cellulare:</strong> <%= @company.company_president.cellulare %>
+          <br>
+          <br>
+          <strong>email:</strong> <%= @company.company_president.email %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col col-xs-12 col-sm-6">
+    <div class="card text-white bg-danger mb-3">
+  <div class="card-header">PERSONA di RIFERIMENTO</div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @company.company_contact_person.nome %> <%= @company.company_contact_person.cognome %></h5>
+    <p class="card-text">
+      <strong>Titolo:</strong>
+      <%= @company.company_contact_person.titolo %>
+      <br>
+      <br>
+      <strong>codfisc:</strong> <%= @company.company_contact_person.codfisc %> - <strong>piva:</strong><%= @company.company_contact_person.piva %>
+      <strong>indirizzo:</strong><br>
+      <%= @company.company_contact_person.indirizzo %><br>
+      <%= @company.company_contact_person.cap %>
+      <%= @company.company_contact_person.citta %> (<%= @company.company_contact_person.provincia %>)
+      <br>
+      <br>
+      <strong>telefono:</strong> <%= @company.company_contact_person.telefono %> - <strong>cellulare:</strong> <%= @company.company_contact_person.cellulare %>
+      <br>
+      <strong>email:</strong> <%= @company.company_contact_person.email %>
+    </p>
+  </div>
+</div>
+  </div>
+
+</div><!-- /row -->
+
+<p>
+  <strong>Descrizione:</strong><br>
+  <%= @company.descrizione %>
+</p>
+<p>
+  <strong>Note:</strong>
+  <%= @company.note %>
+</p>
+
+
+<p><hr></hr>
+
+<h3>COMPILA SCHEDE:</h3>
+<p>Se verde compilata, se rossa da compilare</p>
+<div id="schede-box" class="row">
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.technical_datum %>green<% else %>red<% end %>">
+<%= link_to "DATI TECNICI - STABILIMENTO (Scheda 2)", new_technical_datum_path(company: @company.id)%>
+</div>
+</div>
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.raw_material %>green<% else %>red<% end %>">
+<%= link_to "Materie prime, prodotti finiti, ore marcia – S.3", new_raw_material_path(company: @company.id)%>
+</div>
+</div>
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.energy %>green<% else %>red<% end %>">
+<%= link_to "Energia – acquisti/produzione – S.4", new_energy_path(company: @company.id)%>
+</div>
+</div>
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.transformer %>green<% else %>red<% end %>">
+<%= link_to "Energia – trasformatori - S.5", new_transformer_path(company: @company.id)%><span class="badge">
+</div>
+</div>
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.thermal_production %>green<% else %>red<% end %>">
+<%= link_to "Produzione energia termica – S.6", new_thermal_production_path(company: @company.id)%>
+</div>
+</div>
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.utility %>green<% else %>red<% end %>">
+<%= link_to "Utenze – censimento utenze - S.7", new_utility_path(company: @company.id)%>
+</div>
+</div>
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.compressor %>green<% else %>red<% end %>">
+<%= link_to "Compressori - S.8", new_compressor_path(company: @company.id) %>
+</div>
+</div>
+
+<div class="col col-xs-12 col-sm-4">
+<div class="col col-xs-12 col-sm-12 box" style="background-color:<% if @company.ventilator %>green<% else %>red<% end %>">
+<%= link_to "Ventilatori – trattamento aria - S.9", new_ventilator_path(company: @company.id) %>
+</div>
+</div>
+
+</div><!-- /row -->
+
+
+
+
+
+
+<br><br><br>
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+
+</div><!-- /container -->

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">	
+
+<section id="categoria">
+	<h3 class="redband">{{categoria.titolo}}</h3>
+	{% for prodotti in categoria.prodotti_set.all %}
+	  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+	    <div class="thumbnail">{% load cropping %}
+	      <img src="{% cropped_thumbnail prodotti "croppingdesign" %}" class="img-responsive" alt="{{prodotti.titolo}}">
+	       <h4 class="titolohome">{{prodotti.titolo}}</h4>
+	      <div class="caption">
+	        <p class="descriziohome">{{prodotti.body|safe|truncatechars:90}}</p>
+	        <p></p>
+	      </div>
+	      <h5 class="prezzohome">
+	      	<a href="{% url 'prodotti' prodotti.id %}">
+	      		<i class="fa fa-search fa-1x">&nbsp;VEDI</i>
+	      	</a>
+	      </h5>
+	    </div>
+	  </div>
+	{% endfor %}
+</section>
+
+</div><!-- container -->
+
+{% endblock %}

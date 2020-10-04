@@ -1,0 +1,2 @@
+json.extract! technical_datum, :id, :company_id, :superficie_totale, :superficie_produzione, :superficie_uffici, :superficie_magazzini, :volume_totale, :volume_produzione, :volume_uffici, :volume_magazzini, :dimensione_uffici, :servizi_igenici, :dimensione_piazzale, :presenza_docce, :numero_impiegati, :numero_operai, :descrizione, :created_at, :updated_at
+json.url technical_datum_url(technical_datum, format: :json)

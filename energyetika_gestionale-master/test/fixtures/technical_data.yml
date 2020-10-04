@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: one
+  superficie_totale: 9.99
+  superficie_produzione: 9.99
+  superficie_uffici: 9.99
+  superficie_magazzini: 9.99
+  volume_totale: 9.99
+  volume_produzione: 9.99
+  volume_uffici: 9.99
+  volume_magazzini: 9.99
+  dimensione_uffici: 9.99
+  servizi_igenici: 1
+  dimensione_piazzale: 9.99
+  presenza_docce: 1
+  numero_impiegati: 1
+  numero_operai: 1
+  descrizione: MyText
+
+two:
+  company: two
+  superficie_totale: 9.99
+  superficie_produzione: 9.99
+  superficie_uffici: 9.99
+  superficie_magazzini: 9.99
+  volume_totale: 9.99
+  volume_produzione: 9.99
+  volume_uffici: 9.99
+  volume_magazzini: 9.99
+  dimensione_uffici: 9.99
+  servizi_igenici: 1
+  dimensione_piazzale: 9.99
+  presenza_docce: 1
+  numero_impiegati: 1
+  numero_operai: 1
+  descrizione: MyText

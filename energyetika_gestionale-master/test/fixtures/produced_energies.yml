@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  energy: one
+  produzione: MyString
+  unita_misura: MyString
+  fonte: MyString
+  quantita: MyString
+  costo: MyString
+  anno_riferimento: MyString
+
+two:
+  energy: two
+  produzione: MyString
+  unita_misura: MyString
+  fonte: MyString
+  quantita: MyString
+  costo: MyString
+  anno_riferimento: MyString

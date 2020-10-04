@@ -1,0 +1,39 @@
+utility.html.erb
+
+<div class="container">
+
+<%= form_for @company, url: wizard_path, method: :put do |f| %>
+
+<div class="row">
+
+  <%= f.fields_for :compressor, Compressor.new do |form| %>
+
+   <!-- Items raw material items -->
+  <div class="col s12" id="compressor_items">
+    <h4 class="light">ELENCO</h4>
+    <p>*inserire anche eventuali sistemi di accumulo e/o essicatori</p>
+      <%= form.fields_for (:compressor_items) do |item| %>
+        <%= render 'compressor_item_fields', f: item %>
+      <% end %>
+      <div class="col s12">
+      <%= link_to_add_association 'AGGIUNGI RIGA', form, :compressor_items, { class:'btn btn-aggiungi' } %>
+      </div>
+  </div>
+  <!-- fine -->
+
+
+  <div class="col col-xs-12 col-sm-12">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :compressor_note, class: 'form-control' %>
+  </div>
+
+  <% end %>
+  
+  <div class="actions">
+      <%= f.submit "Continue" %>
+  </div>
+
+
+<% end %>
+
+</div>

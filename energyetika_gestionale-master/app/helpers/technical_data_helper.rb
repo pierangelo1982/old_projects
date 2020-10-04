@@ -1,0 +1,2 @@
+module TechnicalDataHelper
+end

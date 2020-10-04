@@ -1,0 +1,9 @@
+
+# first line must not contain any rules
+media/*
+static
+static/img/*
+static/images/*
+static/berge
+djangocommerce/settings.py
+!.gitignore

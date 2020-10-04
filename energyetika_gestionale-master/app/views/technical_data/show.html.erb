@@ -1,0 +1,87 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+
+<p>
+  <strong>Company:</strong>
+  <%= @technical_datum.company.denominazione %>
+</p>
+
+<p>
+  <strong>Superficie totale:</strong>
+  <%= @technical_datum.superficie_totale %>
+</p>
+
+<p>
+  <strong>Superficie produzione:</strong>
+  <%= @technical_datum.superficie_produzione %>
+</p>
+
+<p>
+  <strong>Superficie uffici:</strong>
+  <%= @technical_datum.superficie_uffici %>
+</p>
+
+<p>
+  <strong>Superficie magazzini:</strong>
+  <%= @technical_datum.superficie_magazzini %>
+</p>
+
+<p>
+  <strong>Volume totale:</strong>
+  <%= @technical_datum.volume_totale %>
+</p>
+
+<p>
+  <strong>Volume produzione:</strong>
+  <%= @technical_datum.volume_produzione %>
+</p>
+
+<p>
+  <strong>Volume uffici:</strong>
+  <%= @technical_datum.volume_uffici %>
+</p>
+
+<p>
+  <strong>Volume magazzini:</strong>
+  <%= @technical_datum.volume_magazzini %>
+</p>
+
+<p>
+  <strong>Dimensione uffici:</strong>
+  <%= @technical_datum.dimensione_uffici %>
+</p>
+
+<p>
+  <strong>Servizi igenici:</strong>
+  <%= @technical_datum.servizi_igenici %>
+</p>
+
+<p>
+  <strong>Dimensione piazzale:</strong>
+  <%= @technical_datum.dimensione_piazzale %>
+</p>
+
+<p>
+  <strong>Presenza docce:</strong>
+  <%= @technical_datum.presenza_docce %>
+</p>
+
+<p>
+  <strong>Numero impiegati:</strong>
+  <%= @technical_datum.numero_impiegati %>
+</p>
+
+<p>
+  <strong>Numero operai:</strong>
+  <%= @technical_datum.numero_operai %>
+</p>
+
+<p>
+  <strong>Descrizione:</strong>
+  <%= @technical_datum.descrizione %>
+</p>
+
+<%= link_to 'Edit', edit_technical_datum_path(@technical_datum) %> |
+<%= link_to 'Back', technical_data_path %>
+
+</div>

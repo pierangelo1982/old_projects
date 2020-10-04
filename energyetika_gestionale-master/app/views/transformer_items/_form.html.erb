@@ -1,0 +1,47 @@
+<%= form_with(model: transformer_item, local: true) do |form| %>
+  <% if transformer_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transformer_item.errors.count, "error") %> prohibited this transformer_item from being saved:</h2>
+
+      <ul>
+      <% transformer_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :transformer_id %>
+    <%= form.text_field :transformer_id, id: :transformer_item_transformer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trasformatore %>
+    <%= form.text_field :trasformatore, id: :transformer_item_trasformatore %>
+  </div>
+
+  <div class="field">
+    <%= form.label :marca %>
+    <%= form.text_field :marca, id: :transformer_item_marca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modello %>
+    <%= form.text_field :modello, id: :transformer_item_modello %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tensione %>
+    <%= form.text_field :tensione, id: :transformer_item_tensione %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :transformer_item_note %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

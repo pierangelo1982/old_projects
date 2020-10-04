@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  utility: one
+  nome: MyString
+  marca: MyString
+  matricola: MyString
+  potenza: MyString
+  ore: MyString
+  vettore: MyString
+  funzione: MyString
+  ausiliari: MyString
+
+two:
+  utility: two
+  nome: MyString
+  marca: MyString
+  matricola: MyString
+  potenza: MyString
+  ore: MyString
+  vettore: MyString
+  funzione: MyString
+  ausiliari: MyString

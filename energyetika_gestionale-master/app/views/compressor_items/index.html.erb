@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <h3 class="page-title">Compressori - S.8</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Compressor</th>
+      <th>Marca</th>
+      <th>Modello</th>
+      <th>Potenza</th>
+      <th>Anno</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @compressor_items.each do |compressor_item| %>
+      <tr>
+        <td><%= compressor_item.compressor %></td>
+        <td><%= compressor_item.marca %></td>
+        <td><%= compressor_item.modello %></td>
+        <td><%= compressor_item.potenza %></td>
+        <td><%= compressor_item.anno %></td>
+        <td><%= compressor_item.note %></td>
+        <td><%= link_to 'Show', compressor_item %></td>
+        <td><%= link_to 'Edit', edit_compressor_item_path(compressor_item) %></td>
+        <td><%= link_to 'Destroy', compressor_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crea Scheda Compressori - S.8', new_compressor_item_path, class: 'btn btn-energ btn-sm table-btn' %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Value</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taxations.each do |taxation| %>
+      <tr>
+        <td><%= taxation.title %></td>
+        <td><%= taxation.value %></td>
+        <td><%= taxation.description %></td>
+        <td><%= link_to 'Show', taxation %></td>
+        <td><%= link_to 'Edit', edit_taxation_path(taxation) %></td>
+        <td><%= link_to 'Destroy', taxation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taxation', new_taxation_path %>

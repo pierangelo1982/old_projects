@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  compressor: one
+  marca: MyString
+  modello: MyString
+  potenza: MyString
+  anno: MyString
+  note: MyText
+
+two:
+  compressor: two
+  marca: MyString
+  modello: MyString
+  potenza: MyString
+  anno: MyString
+  note: MyText

@@ -1,0 +1,51 @@
+<div class="col col-sm-12 cocoonx">
+
+	<div class="col s10">
+    <div class="row">
+      <div class="col col-xs-12 col-sm-4">
+        <%= f.label :nome %>
+        <%= f.text_field :nome, id: :utility_item_nome, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-4">
+        <%= f.label :marca %>
+        <%= f.text_field :marca, id: :utility_item_marca, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-4">
+        <%= f.label :matricola %>
+        <%= f.text_field :matricola, id: :utility_item_matricola, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-4">
+        <%= f.label :potenza %>
+        <%= f.text_field :potenza, id: :utility_item_potenza, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-4">
+        <%= f.label :ore, 'ORE/GG' %>
+        <%= f.text_field :ore, id: :utility_item_ore, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-4">
+        <%= f.label :vettore %>
+        <%= f.text_field :vettore, id: :utility_item_vettore, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :funzione %>
+        <%= f.text_field :funzione, id: :utility_item_funzione, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :ausiliari %>
+        <%= f.text_field :ausiliari, id: :utility_item_ausiliari, class: 'form-control' %>
+      </div>
+    </div><!-- /row -->
+	</div>
+
+	<div class="col xol-xs-12 col-sm-12">
+	<%=link_to_remove_association("RIMUOVI RIGA", f, { wrapper_class: 'cocoonx', class: 'btn btn-rimuovi'}) %>
+	</div>
+
+</div>

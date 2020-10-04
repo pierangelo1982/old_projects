@@ -1,0 +1,1 @@
+json.partial! "thermal_energy_production_items/thermal_energy_production_item", thermal_energy_production_item: @thermal_energy_production_item

@@ -1,0 +1,58 @@
+<nav id="header" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/#">
+     <%= image_tag("logo", class: "logo") %>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <i class="fa fa-home" aria-hidden="true"></i><br>
+          Home <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/companies">
+          <i class="fa fa-address-card" aria-hidden="true"></i><br>
+          Aziende
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-list"></i><br>
+          ELENCO SCHEDE
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to 'Dati tecnici – Stabilimento – S.2', technical_data_path, class: "dropdown-item" %>
+          <%= link_to "Materie prime, prodotti finiti e ore di marcia – S.3", raw_materials_path, class: "dropdown-item" %>
+          <%= link_to "Energia – acquisti/produzione – S.4", energies_path, class: "dropdown-item" %>
+          <%= link_to "Energia – trasformatori - S.5", transformers_path, class: "dropdown-item" %>
+          <%= link_to "Produzione energia termica – S.6", thermal_productions_path, class: "dropdown-item" %>
+          <%= link_to "Utenze – censimento utenze - S.7", utilities_path, class: "dropdown-item" %>
+          <%= link_to "Compressori - S.8", compressors_path, class: "dropdown-item" %>
+          <%= link_to "Ventilatori – trattamento aria - S.9", ventilators_path, class: "dropdown-item" %>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/step_by_step">
+          <i class="fa fa-address-card" aria-hidden="true"></i><br>
+          Step by Step
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <ul class="nav navbar-nav ml-auto">
+      <% if admin_signed_in? %>
+      <li class="nav-item"><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
+      <% else %>
+      <li class="nav-item"><%= link_to('Login', new_admin_session_path) %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

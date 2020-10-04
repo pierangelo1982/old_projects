@@ -1,0 +1,41 @@
+<div class="col col-sm-12 cocoonx">
+
+	<div class="col s10">
+    <div class="row">
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :nome_materia %>
+        <%= f.text_field :nome_materia, id: :raw_material_item_nome_materia, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :unita_misura %>
+        <%= f.text_field :unita_misura, id: :raw_material_item_unita_misura, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-3">
+        <%= f.label :origine_dato %>
+        <%= f.text_field :origine_dato, id: :raw_material_item_origine_dato, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :quantita %>
+        <%= f.text_field :quantita, id: :raw_material_item_quantita, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-6">
+        <%= f.label :anno_riferimento %>
+        <%= f.text_field :anno_riferimento, id: :raw_material_item_anno_riferimento, class: 'form-control' %>
+      </div>
+
+      <div class="col col-xs-12 col-sm-12">
+        <%= f.label :note %>
+        <%= f.text_area :note, id: :raw_material_item_note, class: 'form-control' %>
+      </div>
+    </div><!-- /row -->
+	</div>
+
+	<div class="col s2">
+	<%=link_to_remove_association("RIMUOVI RIGA", f, { wrapper_class: 'cocoonx', class: 'btn btn-rimuovi'}) %>
+	</div>
+
+</div>

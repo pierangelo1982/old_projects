@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transformer:</strong>
+  <%= @transformer_item.transformer %>
+</p>
+
+<p>
+  <strong>Trasformatore:</strong>
+  <%= @transformer_item.trasformatore %>
+</p>
+
+<p>
+  <strong>Marca:</strong>
+  <%= @transformer_item.marca %>
+</p>
+
+<p>
+  <strong>Modello:</strong>
+  <%= @transformer_item.modello %>
+</p>
+
+<p>
+  <strong>Tensione:</strong>
+  <%= @transformer_item.tensione %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @transformer_item.note %>
+</p>
+
+<%= link_to 'Edit', edit_transformer_item_path(@transformer_item) %> |
+<%= link_to 'Back', transformer_items_path %>

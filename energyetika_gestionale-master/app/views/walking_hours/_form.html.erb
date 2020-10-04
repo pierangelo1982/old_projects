@@ -1,0 +1,52 @@
+<%= form_with(model: walking_hour, local: true) do |form| %>
+  <% if walking_hour.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(walking_hour.errors.count, "error") %> prohibited this walking_hour from being saved:</h2>
+
+      <ul>
+      <% walking_hour.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :raw_material_id %>
+    <%= form.text_field :raw_material_id, id: :walking_hour_raw_material_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :veicolo %>
+    <%= form.text_field :veicolo, id: :walking_hour_veicolo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unita_misura %>
+    <%= form.text_field :unita_misura, id: :walking_hour_unita_misura %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origine_dato %>
+    <%= form.text_field :origine_dato, id: :walking_hour_origine_dato %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :walking_hour_note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ore_marcia %>
+    <%= form.text_field :ore_marcia, id: :walking_hour_ore_marcia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :anno_riferimento %>
+    <%= form.text_field :anno_riferimento, id: :walking_hour_anno_riferimento %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid">
+<h3 class="page-title"><i class="fa fa-address-card" aria-hidden="true"></i> Aziende</h3>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Denominazione</th>
+      <th>Codfisc</th>
+      <th>Piva</th>
+      <th>Citta</th>
+      <th>Telefono</th>
+      <th>Email</th>
+      <th>Iscrizione elenco energivori</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.denominazione %></td>
+        <td><%= company.codfisc %></td>
+        <td><%= company.piva %></td>
+        <td><%= company.citta %></td>
+        <td><%= company.telefono %></td>
+        <td><%= company.email %></td>
+        <td><%= company.iscrizione_elenco_energivori %></td>
+        <td><%= link_to 'vedi', company, class: 'btn btn-info btn-sm table-btn' %></td>
+        <td><%= link_to 'modifica', edit_company_path(company), class: 'btn btn-warning btn-sm table-btn' %></td>
+        <td><%= link_to 'cancella', company, method: :delete, class: 'btn btn-sm btn-danger table-btn', data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'AGGIUNGI', new_company_path, class: 'btn btn-energ btn-sm table-btn' %>
+
+</div>

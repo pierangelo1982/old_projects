@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Thermal production:</strong>
+  <%= @thermal_production_item.thermal_production %>
+</p>
+
+<p>
+  <strong>Caldo freddo:</strong>
+  <%= @thermal_production_item.caldo_freddo %>
+</p>
+
+<p>
+  <strong>Utenza:</strong>
+  <%= @thermal_production_item.utenza %>
+</p>
+
+<p>
+  <strong>Nome generatore:</strong>
+  <%= @thermal_production_item.nome_generatore %>
+</p>
+
+<p>
+  <strong>Matricola:</strong>
+  <%= @thermal_production_item.matricola %>
+</p>
+
+<p>
+  <strong>Potenza:</strong>
+  <%= @thermal_production_item.potenza %>
+</p>
+
+<p>
+  <strong>Dest acs:</strong>
+  <%= @thermal_production_item.dest_acs %>
+</p>
+
+<%= link_to 'Edit', edit_thermal_production_item_path(@thermal_production_item) %> |
+<%= link_to 'Back', thermal_production_items_path %>
